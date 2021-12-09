@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dont{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <marquee behavior='scroll' scrollamount='40' direction="left">
+
+    </marquee>
+    <div>
+        <input type="number" placeholder="Enter a number" id="usernum">
+        <button onclick="randomImages()">Click me</button>
+    </div>
+    
+    <script>
+        var arr = ['./images/apple.jpeg', './images/orange.jpeg','./images/haran.jpeg', './images/varun.jpeg','./images/karan.jpeg', './images/maran.jpeg'];
+        var marquee = document.getElementsByTagName('marquee')[0];
+        var new_arr=[]
+        var img = (src,)=>{
+            return `<div class='dont'><img src="${src}"></div>`;
+        }
+
+        function randomImages(){
+            new_arr = [];
+            var usernum = document.getElementById('usernum').value;
+            for(i=0;i < usernum;i++){
+                new_arr.push(arr[Math.floor(Math.random() * arr.length)])
+            }
+            console.log(new_arr);
+            array_shuffled= shuffle(new_arr);
+            var gimage ='';
+            for(i=0;i<array_shuffled.length;i++)
+            {
+                gimage += img(array_shuffled[i]);
+            }
+
+            marquee.innerHTML= gimage
+        }
+      
+  
+        function shuffle(array) {
+            let currentIndex = array.length,  randomIndex;
+
+            // While there remain elements to shuffle...
+            while (currentIndex != 0) {
+
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+
+                // And swap it with the current element.
+                [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]];
+            }
+
+            return array;
+        }
+       
+
+
+    </script>
+</body>
+</html>
