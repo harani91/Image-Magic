@@ -12,7 +12,7 @@
     </style>
 </head>
 <body>
-    <marquee behavior='scroll' scrollamount='40' direction="left">
+    <marquee behavior='scroll' scrollamount='25' direction="left">
 
     </marquee>
     <div>
@@ -21,7 +21,7 @@
     </div>
     
     <script>
-        var arr = ['./images/apple.jpeg', './images/orange.jpeg','./images/haran.jpeg', './images/varun.jpeg','./images/karan.jpeg', './images/maran.jpeg'];
+        var arr = ['./images/apple.jpeg', './images/orange.jpeg','./images/avacado.jpeg', './images/baby corn.jpeg','./images/banana.jpeg', './images/beetroot.jpeg','./images/brinjal.jpeg','./images/broccoli.jpeg','./images/carrot.jpeg','./images/grapes.jpeg','./images/mushrooms.jpeg','./images/onion.jpeg','./images/pomegranate.jpeg','./images/potato.jpeg','./images/strawberry.jpeg','./images/watermelon.jpeg'];
         var marquee = document.getElementsByTagName('marquee')[0];
         var new_arr=[]
         var img = (src,)=>{
@@ -41,8 +41,9 @@
             {
                 gimage += img(array_shuffled[i]);
             }
-
+console.log(gimage);
             marquee.innerHTML= gimage
+
         }
       
   
